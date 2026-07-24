@@ -16,7 +16,7 @@ public class Truck implements CarInterface {
     private float speed;
     private ArrayList<Ticket> tickets = new ArrayList<>();
     private boolean seatBeltFastened;
-
+    
     public Truck(String plate, float speed, boolean seatBeltFastened) {
         this.plate = plate;
         this.speed = speed;
@@ -60,6 +60,11 @@ public class Truck implements CarInterface {
     @Override
     public float getMaxSpeed() {
         return maxSpeed;
+    }
+    
+    @Override
+    public String getTotalFinesFormated() {
+           return plate + " : " + calculateSumOfAllTickets();
     }
 
 }

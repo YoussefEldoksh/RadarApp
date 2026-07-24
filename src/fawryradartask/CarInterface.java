@@ -17,4 +17,6 @@ public interface CarInterface {
     ArrayList<Ticket> getTickets();
     boolean getSeatBeltStatus();
     float getMaxSpeed();
+    String getTotalFinesFormated();
+    
 }

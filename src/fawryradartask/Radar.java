@@ -26,9 +26,14 @@ public class Radar {
                 actualViolations.add(violation);
             }
         }
-        
-        Ticket ticket = new Ticket(car, actualViolations);
-        car.addTicket(ticket);
+        if(actualViolations.size() != 0){
+            Ticket ticket = new Ticket(car, actualViolations);
+            car.addTicket(ticket);
+            System.out.println(ticket.toString());
+        }
+        else{
+            
+        }
     }
     
     

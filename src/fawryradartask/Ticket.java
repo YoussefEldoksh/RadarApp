@@ -50,6 +50,9 @@ public class Ticket {
         String s = "Traffic fine for car " + car.getPlate() + "\n" 
                + "Total amount: " + fineAmount + "\n"
                +"Violations:\n";
+       if(violations.size() == 0){
+           s += "No Violations Commited\n";
+       }
        for(TrafficViolation violation : violations){
            s += violation.getDescription(car);
            s += "\n"; 

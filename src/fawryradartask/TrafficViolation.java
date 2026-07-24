@@ -12,4 +12,6 @@ public interface TrafficViolation {
     boolean isViolationDone(CarInterface car);
     int getFineAmount();
     String getDescription(CarInterface car);
+    String getViolationName();  
+    int getViolationsCount();
 }

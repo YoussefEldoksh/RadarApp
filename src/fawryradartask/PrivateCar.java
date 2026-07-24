@@ -61,5 +61,11 @@ public class PrivateCar implements CarInterface{
         } 
         return ticketsSum;
     }
+
+    @Override
+    public String getTotalFinesFormated() {
+           return plate + " : " + calculateSumOfAllTickets();
+    }
+
     
 }

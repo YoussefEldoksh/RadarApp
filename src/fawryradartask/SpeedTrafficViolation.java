@@ -10,10 +10,16 @@ package fawryradartask;
  */
 public class SpeedTrafficViolation implements TrafficViolation{
     private int fineAmount = 300;
-
+    private int violationsCount = 0;
+    
+    @Override
+    public int getViolationsCount() {
+        return violationsCount;
+    }
     @Override
     public boolean isViolationDone(CarInterface car) {
         if(car.getSpeed() > car.getMaxSpeed()){
+            violationsCount += 1;
            return true;
         }
         return false;
@@ -28,5 +34,12 @@ public class SpeedTrafficViolation implements TrafficViolation{
     public String getDescription(CarInterface car) {
         return "- Speed of " + car.getSpeed() + " exceeded max allowed " + car.getMaxSpeed() +": " + getFineAmount() + " EGP"; 
     }
+
+    @Override
+    public String getViolationName() {
+        return "Speed Limit Violation";
+    }
+    
+    
     
 }
